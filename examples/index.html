@@ -31,26 +31,46 @@
 </head>
 <body>
     <div id="sidebar">
-        <h1>leaflet-sidebar</h1>
+        <h1>Center for Urban Waters AQI</h1>
 
-        <p>A responsive sidebar plugin for for <a href="http://leafletjs.com/">Leaflet</a>, a JS library for interactive maps.</p>
+        <p>This website was created by a team of students from the University of Washington Tacoma for the Center for Urban Waters. The goal of this project was to make air quality data accessible to the public in Tacoma so that members of the community can better understand their exposure to pollution and harmful particles. Air quality can vary greatly across a city and especially in a city with such a diverse landscape as Tacoma, so we have 12 sensors placed around the city that you can view data for.
+
+Each pin will show you both the current air quality index (AQI) for that location as well as the amount of particulate matter (PM) detected in that area. The AQI will give you an idea of how much pollution is in the air while the PM value will tell you about larger particles like dust and smoke in the air.
+
+To begin, click on a pin to see the most recent* air quality data from the sensor in that location.
+
+*All data shown is current within an hour.</p>
 
         <p><b>Click on the marker to show the sidebar again when you've closed it.</b></p>
 
-        <p>Other examples:</p>
+        <p>Below are all the areas that have air quality sensors</p>
 
-        <ul>
-            <li><a href="listing-markers.html">listing-markers example</a></li>
-            <li><a href="two-sidebars.html">two-sidebars example</a></li>
-        </ul>
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2217">Center For Urban Waters</a></p>
 
-        <p class="lorem">AQI Info goes here </p>
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2189">Crescent Heights Elementary School</a></p>
 
-        <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2190">Stafford Elementary School</a></p>
 
-        <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2200">Foss High School</a></p>
 
-        <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2201">Roosevelt Elementary School</a></p>
+
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2217">SAMI ECL High Schools</a></p>
+
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2203">Glaudrone Middle School</a></p>
+
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2204">Larchmont Elementary School</a></p>
+
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2205">PSCAA Alexander Avenue</a></p>
+
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2206">Mt. Tahoma High School</a></p>
+
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2215">UWT/School of the Arts</a></p>
+
+        <p><a href="https://urban.microsoft.com/air/data/Tacoma/2216">Jennie Reed Elementary School</a></p>
+
+
+
     </div>
 
     <div id="map"></div>
@@ -58,8 +78,7 @@
     <a href="https://github.com/Turbo87/leaflet-sidebar/"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-    <script src="../src/L.Control.Sidebar.js"></script>
-
+    <script src="../src/L.Control.Sidebar.js"></script> 
     <script>
         var map = L.map('map');
         map.setView([47.2594, -122.43459], 12);
@@ -125,6 +144,8 @@
         var marker = L.marker([47.2255609,-122.4633906]).addTo(map).on('click', function () {//Jennie Reed Elementary School
             sidebar.toggle();
         });
+
+        marker.bindPopup("Hello! I am a popup!");
 
 
         map.on('click', function () {
