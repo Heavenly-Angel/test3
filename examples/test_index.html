@@ -108,6 +108,8 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         });
         marker.bindPopup("Hello! I am a popup!");*/
 
+
+
         var AQI = 1;
 
         let file = "Test1.json"
@@ -116,8 +118,20 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         .then(x => x.text())
         .then(y => document.getElementById("demo").innerHTML = y);
         
+        
+        async function getData(url) {
+          const response = await fetch(url);
 
-        //var AQI = 1;
+          return response.json();
+        }
+
+        const data = getData(file);
+
+        console.log({ data })
+
+        
+
+        var AQI = data;
 
         var marker = L.marker([47.2594, -122.43459]).addTo(map);
         marker.bindPopup("Center for Urban Waters Current AQI: " + AQI);
