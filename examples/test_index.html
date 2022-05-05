@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Center for Urban Waters AQI</title>
+    <title>1Center for Urban Waters AQI</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -109,7 +109,7 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         marker.bindPopup("Hello! I am a popup!");*/
 
 
-
+        const data = "bruh";
         var AQI = 1;
 
         let file = "Test1.json"
@@ -118,7 +118,7 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         .then(x => x.text())
         .then(y => document.getElementById("demo").innerHTML = y);
         
-        
+        /*
         async function getData(url) {
           const response = await fetch(url);
 
@@ -128,8 +128,17 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         const data = getData(file);
 
         console.log({ data })
-
+        */
         
+        fetch(file)
+        .then(response => {
+        // store data as an object
+        data1 = response.data
+        // output to document that we have the data
+        document.write("Data received\n");
+        data = JSON.stringify(data1);
+        
+      })
 
         var AQI = data;
 
