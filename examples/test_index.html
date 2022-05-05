@@ -112,10 +112,16 @@ To begin, click on a pin to see the most recent* air quality data from the senso
 
         let file = "Test1.json"
 
-        fetch (file)
-        .then(x => x.text())
-        .then(y => document.getElementById("demo").innerHTML = y);
+        var obj;
         
+        fetch (file)
+          .then(res => res.json())
+          .then(data => obj = data)
+          .then(() => console.log(obj));
+
+        document.getElementById("demo").innerHTML = obj;
+
+
 
         //var AQI = 1;
 
