@@ -112,18 +112,18 @@ To begin, click on a pin to see the most recent* air quality data from the senso
 
         let file = "Test1.json"
 
-        var obj;
+        async function getData(file) {
+          const response = await fetch(file);
+
+          return response.json();
+        }
+
+        const data = getData(file);
+
+        console.log({ data })
         
-        fetch (file)
-          .then(res => res.json())
-          .then(data => obj = data)
-          .then(() => console.log(obj));
 
-        document.getElementById("demo").innerHTML = obj;
-
-
-
-        //var AQI = 1;
+        AQI = data;
 
         var marker = L.marker([47.2594, -122.43459]).addTo(map);
         marker.bindPopup("Center for Urban Waters Current AQI: " + AQI);
