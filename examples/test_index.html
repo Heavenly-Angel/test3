@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>9Center for Urban Waters AQI</title>
+    <title>10Center for Urban Waters AQI</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -124,7 +124,7 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         xhReq.send(null);
         var obj = JSON.parse(xhReq.responseText);
         test1 = {obj};
-        AQI = test1.aqi;
+        AQI = test1[0].aqi;
 
 
         //AQI = jsonObject;
