@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>8Center for Urban Waters AQI</title>
+    <title>9Center for Urban Waters AQI</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -112,7 +112,7 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         
         var AQI = 1;
 
-        let file = "Test1.json"
+        let file = "Test1.js"
 
         fetch (file)
         .then(x => x.text())
@@ -123,7 +123,8 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         xhReq.open("GET", file, false);
         xhReq.send(null);
         var obj = JSON.parse(xhReq.responseText);
-        AQI = obj.aqi;
+        test1 = {obj};
+        AQI = test1.aqi;
 
 
         //AQI = jsonObject;
