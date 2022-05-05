@@ -124,7 +124,8 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         xhReq.send(null);
         var obj = JSON.parse(xhReq.responseText);
         test1 = [{obj}];
-        AQI = test1[0].aqi;
+        //AQI = test1[0].aqi;
+        AQI = obj[0].aqi;
 
 
         //AQI = jsonObject;
