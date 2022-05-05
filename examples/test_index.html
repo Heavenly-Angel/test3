@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>3Center for Urban Waters AQI</title>
+    <title>4Center for Urban Waters AQI</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -130,15 +130,7 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         console.log({ data })
         */
         
-        const data = fetch(file)
-        .then(response => {
-        // store data as an object
-        data1 = response.data
-        // output to document that we have the data
-        document.write("Data received\n");
-        return JSON.stringify(data1);
-        
-      });
+
 
         var AQI = data;
 
