@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>7Center for Urban Waters AQI</title>
+    <title>8Center for Urban Waters AQI</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -122,10 +122,11 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         var xhReq = new XMLHttpRequest();
         xhReq.open("GET", file, false);
         xhReq.send(null);
-        var jsonObject = JSON.parse(xhReq.responseText);
+        var obj = JSON.parse(xhReq.responseText);
+        AQI = obj.aqi;
 
 
-        AQI = jsonObject;
+        //AQI = jsonObject;
 
         var marker = L.marker([47.2594, -122.43459]).addTo(map);
         marker.bindPopup("Center for Urban Waters Current AQI: " + AQI);
