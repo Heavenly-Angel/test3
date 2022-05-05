@@ -122,7 +122,7 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         async function getData(url) {
           const response = await fetch(url);
 
-          return response.json();
+          return JSON.stringify(response);
         }
 
         const data = getData(file);
