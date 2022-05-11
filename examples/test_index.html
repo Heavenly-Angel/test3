@@ -57,7 +57,7 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         
         <p><a href="https://heavenly-angel.github.io/test3/examples/2201">Roosevelt Elementary School</a></p>
         
-        <p><a href="https://heavenly-angel.github.io/test3/examples/2202">SAMI ECL High Schools</a></p>
+        <p><a id="2202" href="https://heavenly-angel.github.io/test3/examples/2202">SAMI ECL High Schools</a></p>
        
         <p><a href="https://heavenly-angel.github.io/test3/examples/2203">Glaudrone Middle School</a></p>
 
@@ -236,9 +236,12 @@ To begin, click on a pin to see the most recent* air quality data from the senso
         
         if (obj6.length == 0) {
             AQI6 = "This sensor is down!";
+            document.getElementById("2202").innerHTML = "SAMI ECL High Schools sensor is down!";
         } else {
             AQI6 = obj6[0].aqi;
         }
+
+
 
         
         var marker = L.marker([47.2119195,-122.4618277]).addTo(map);
