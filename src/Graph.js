@@ -63,7 +63,7 @@ window.onload = function () {
     var chart = new CanvasJS.Chart("chartContainer",
     {
       title:{
-        text: "Hourly Air Quality Indexes"
+        text: "Crescent Heights Elementary School"
       },
 
       axisX:{
@@ -75,7 +75,7 @@ window.onload = function () {
         //labelAngle: -20
       },
       axisY:{
-        title: "Air Quality Index"
+        title: "Hourly Air Quality Index"
       },
       data: [
       {        
