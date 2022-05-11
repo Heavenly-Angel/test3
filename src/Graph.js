@@ -1,35 +1,35 @@
   	
 
-  	var xml = new XMLHttpRequest();
-        xml.open("GET", "Device2189.json", false); // Crescent Heights Elementary School
-        xml.send(null);
-        var json = JSON.parse(xml.responseText);
+  	var xml1 = new XMLHttpRequest();
+        xml1.open("GET", "Device2189.json", false); // Crescent Heights Elementary School
+        xml1.send(null);
+        var json1 = JSON.parse(xml1.responseText);
                 
         //make a copy of obj so that I can check if its empty or not in order to continue the logic
 	
 	//const obj = ["2022-05-10 17:24:13", "2022-05-10 17:04:01", "2022-05-10 16:43:49", "2022-05-10 16:23:37", "2022-05-10 16:03:25"];
 	//it is in descending order
-	var timeArray = [];
-	var yearArray = [];
-	var monthArray = [];
-	var dayArray = [];
-	var hourArray = [];
-	var minuteArray = [];
+	var timeArray1 = [];
+	var yearArray1 = [];
+	var monthArray1 = [];
+	var dayArray1 = [];
+	var hourArray1 = [];
+	var minuteArray1 = [];
 	
-	var arrayLength = json.length;
+	var arrayLength = json1.length;
 	
 
 	for (let i = 0; i < arrayLength; i++) {
-		timeArray[i] = json[i].readingDateTimeLocal;
+		timeArray1[i] = json1[i].readingDateTimeLocal;
 	}
 	console.log("The array length: " + arrayLength);
 	for (let j = 0; j < arrayLength; j++) {
-		tempString = timeArray[j];
-		yearArray[j] = tempString.substring(0, 4);
-		monthArray[j] = (String) (parseInt(tempString.substring(5, 7)) - 1);
-		dayArray[j] = tempString.substring(8, 10);
-		hourArray[j] = tempString.substring(11, 13);
-		minuteArray[j] = tempString.substring(14, 16);
+		tempString = timeArray1[j];
+		yearArray1[j] = tempString.substring(0, 4);
+		monthArray1[j] = (String) (parseInt(tempString.substring(5, 7)) - 1);
+		dayArray1[j] = tempString.substring(8, 10);
+		hourArray1[j] = tempString.substring(11, 13);
+		minuteArray1[j] = tempString.substring(14, 16);
 
 
 
@@ -42,10 +42,10 @@
 	console.log(minuteArray);
 	*/
 
-	dataPointsArray = [];//array, 2022-05-10 17:24:13
+	var dataPointsArray1 = [];//array, 2022-05-10 17:24:13
 
 	for (k = 0; k < arrayLength; k++) {
-		dataPointsArray[k] = {x: new Date( yearArray[k], monthArray[k], dayArray[k], hourArray[k], minuteArray[k] ), y: json[k].aqi};
+		dataPointsArray1[k] = {x: new Date( yearArray1[k], monthArray1[k], dayArray1[k], hourArray1[k], minuteArray1[k] ), y: json1[k].aqi};
 	}
 
 		
@@ -70,7 +70,7 @@ window.onload = function () {
       data: [
       {        
         type: "line",
-        dataPoints: dataPointsArray //Array I made so make sure to change!!
+        dataPoints: dataPointsArray1 //Array I made so make sure to change!!
       }
       ]
     });
