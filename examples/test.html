@@ -5,7 +5,7 @@
   <script type="text/javascript">
   	
   	var xhReq = new XMLHttpRequest();
-        xhReq.open("GET", "Device2202.json", false); // Crescent Heights Elementary School
+        xhReq.open("GET", "Device2217.json", false); // Crescent Heights Elementary School
         xhReq.send(null);
         var obj = JSON.parse(xhReq.responseText);
                 
@@ -31,7 +31,6 @@
 		tempString = timeArray[j];
 		yearArray[j] = tempString.substring(0, 4);
 		monthArray[j] = (String) (parseInt(tempString.substring(5, 7)) - 1);
-		console.log
 		dayArray[j] = tempString.substring(8, 10);
 		hourArray[j] = tempString.substring(11, 13);
 		minuteArray[j] = tempString.substring(14, 16);
@@ -67,10 +66,10 @@
         ]; 
 		*/
 window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer",
+    var chart = new CanvasJS.Chart("Center for Urban Waters",
     {
       title:{
-        text: "Crescent Heights Elementary School"
+        text: "Center for Urban Waters"
       },
 
       axisX:{
@@ -97,6 +96,6 @@ chart.render();
   </script>
 </head>
 <body>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<div id="Center for Urban Waters" style="height: 300px; width: 100%;"></div>
 </body>
 </html>
