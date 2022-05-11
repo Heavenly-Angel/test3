@@ -69,7 +69,7 @@ window.onload = function () {
       axisX:{
         //title: "time",
         //gridThickness: 2,
-        interval:1, 
+        interval:6, 
         intervalType: "hour",        
         valueFormatString: "hh TT", 
         //labelAngle: -20
