@@ -60,7 +60,7 @@
         ]; 
 		*/
 window.onload = function () {
-    var chart = new CanvasJS.Chart("Center for Urban Waters",
+    var chart = new CanvasJS.Chart("device2217",
     {
       title:{
         text: "Center for Urban Waters"
