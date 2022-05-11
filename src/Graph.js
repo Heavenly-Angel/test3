@@ -1,5 +1,5 @@
   	var xhReq = new XMLHttpRequest();
-        xhReq.open("GET", "24hours.json", false); // Crescent Heights Elementary School
+        xhReq.open("GET", "Device2189.json", false); // Crescent Heights Elementary School
         xhReq.send(null);
         var obj = JSON.parse(xhReq.responseText);
                 
@@ -18,13 +18,13 @@
 	
 
 	for (let i = 0; i < arrayLength; i++) {
-		timeArray[i] = obj[i].readingDateTimeUTC;
+		timeArray[i] = obj[i].readingDateTimeLocal;
 	}
 	console.log(arrayLength);
 	for (let j = 0; j < arrayLength; j++) {
 		tempString = timeArray[j];
 		yearArray[j] = tempString.substring(0, 4);
-		monthArray[j] = tempString.substring(5, 7);
+		monthArray[j] = (String) (parseInt(tempString.substring(5, 7)) - 1);
 		dayArray[j] = tempString.substring(8, 10);
 		hourArray[j] = tempString.substring(11, 13);
 		minuteArray[j] = tempString.substring(14, 16);
@@ -63,7 +63,7 @@ window.onload = function () {
     var chart = new CanvasJS.Chart("chartContainer",
     {
       title:{
-        text: "1Crescent Heights Elementary School"
+        text: "Crescent Heights Elementary School"
       },
 
       axisX:{
