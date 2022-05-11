@@ -43,7 +43,7 @@
 	dataPointsArray = [];//array, 2022-05-10 17:24:13
 
 	for (k = 0; k < arrayLength; k++) {
-		dataPointsArray[k] = {x: new Date( Date.UTC(yearArray[k], monthArray[k], dayArray[k], hourArray[k], minuteArray[k]) ), y: obj[k].aqi};
+		dataPointsArray[k] = {x: new Date( yearArray[k], monthArray[k], dayArray[k], hourArray[k], minuteArray[k] ), y: obj[k].aqi};
 	}
 
 		/*
@@ -68,10 +68,10 @@ window.onload = function () {
 
       axisX:{
         //title: "time",
-        gridThickness: 2,
+        //gridThickness: 2,
         interval:1, 
         intervalType: "hour",        
-        valueFormatString: "hh TT K", 
+        valueFormatString: "hh TT", 
         //labelAngle: -20
       },
       axisY:{
