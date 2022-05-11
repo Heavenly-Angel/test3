@@ -36,11 +36,18 @@
 		dataPointsArray[k] = {x: new Date( yearArray[k], monthArray[k], dayArray[k], hourArray[k], minuteArray[k] ), y: obj[k].aqi};
 	}
 
+	var chartTitle;
+	if (arrayLength == 0) {
+		chartTitle = "Glaudrone Middle School AQI Sensor is down! Please come back later.";
+	} else {
+		chartTitle = "Glaudrone Middle School";
+	}
+
 window.onload = function () {
     var chart = new CanvasJS.Chart("deviceC",
     {
       title:{
-        text: "Glaudrone Middle School"
+        text: chartTitle
       },
 
       axisX:{
