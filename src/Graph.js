@@ -63,7 +63,7 @@ window.onload = function () {
     var chart = new CanvasJS.Chart("chartContainer",
     {
       title:{
-        text: "Crescent Heights Elementary School"
+        text: "1Crescent Heights Elementary School"
       },
 
       axisX:{
