@@ -36,11 +36,19 @@
 		dataPointsArray[k] = {x: new Date( yearArray[k], monthArray[k], dayArray[k], hourArray[k], minuteArray[k] ), y: obj[k].aqi};
 	}
 
+	var chartTitle;
+	if (arrayLength == 0) {
+		chartTitle = "UWT/School of the Arts AQI Sensor is down! Please come back later.";
+	} else {
+		chartTitle = "UWT/School of the Arts";
+	}
+
+
 window.onload = function () {
     var chart = new CanvasJS.Chart("deviceC",
     {
       title:{
-        text: "UWT/School of the Arts"
+        text: chartTitle
       },
 
       axisX:{
